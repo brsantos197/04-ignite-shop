@@ -1,6 +1,7 @@
 import { styled } from "..";
 
 export const Container = styled('div', {
+  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
@@ -8,9 +9,23 @@ export const Container = styled('div', {
   minHeight: '100vh',
 })
 
-export const Header = styled('header', {
-  padding: '2rem 0',
-  width: '100%',
-  maxWidth: 1180,
-  margin: '0 auto',
+export const Button = styled('button', {
+  marginTop: 'auto',
+  background: '$green500',
+  border: 0,
+  color: '$white',
+  borderRadius: 8,
+  padding: '1.25rem',
+  cursor: 'pointer',
+  fontWeight: 'bold',
+  fontSize: '$md',
+
+  '&:disabled': {
+    opacity: 0.6,
+    cursor: 'not-allowed'
+  },
+
+  '&:not(:disabled):hover': {
+    backgroundColor: '$green300'
+  }
 })

@@ -9,8 +9,10 @@ import { stripe } from "../lib/stripe";
 import { HomeContainer, Product } from "../styles/pages/home";
 
 
+import { Handbag } from "@phosphor-icons/react";
 import 'keen-slider/keen-slider.min.css';
 import Stripe from "stripe";
+import { IconContainer } from "../styles/components/header";
 
 interface HomeProps {
   products: {
@@ -40,8 +42,13 @@ export default function Home({ products }: HomeProps) {
             <Product className="keen-slider__slide">
               <Image src={product.imageUrl} width={520} height={480} alt={product.name} />
               <footer>
-                <strong>{product.name}</strong>
-                <span>{product.price}</span>
+                <div>
+                  <p><strong>{product.name}</strong></p>
+                  <span>{product.price}</span>
+                </div>
+                <IconContainer css={{ backgroundColor: '$green500', color: '$white' }} >
+                  <Handbag weight="bold" size={32} />
+                </IconContainer>
               </footer>
             </Product>
           </Link>
